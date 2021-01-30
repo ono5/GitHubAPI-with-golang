@@ -15,6 +15,7 @@ type Repo struct {
 	HTMLURL string `json:"html_url"`
 }
 
-type Repos struct {
-	Repos []Repo `json:"repos"`
+type GetRequest interface {
+	GetUser(username string) UserInfo
+	GetRepos(username string) []Repo
 }
